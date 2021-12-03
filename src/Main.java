@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         HotelInfo model = new HotelInfo();
-        model.setPrice(1800);
+        model.setPrice(1000);
         HotelView view = new HotelView(model);
         ClientController controller = new ClientController(model, view);
 
