@@ -6,11 +6,22 @@ public class Validator {
     // Валидация ввода имени
     public static String validateName(Scanner scanner) {
         String str = scanner.nextLine().trim();
-        while (str.isEmpty()) {
-            System.out.print("Пусто! Введите имя: ");
-            str = scanner.nextLine().trim();
+        while (true) {
+            try {
+                return validateName(str);
+            } catch (InvalidInputException exception) {
+                System.out.print(exception.getMessage());
+                str = scanner.nextLine().trim();
+            }
         }
-        return str;
+    }
+
+    private static String validateName(String str) throws InvalidInputException {
+        if (!str.isEmpty()) {
+            return str;
+        } else {
+            throw new InvalidInputException("Пусто! Введите имя: ");
+        }
     }
 
     //Валидация ввода названия отеля
@@ -112,16 +123,27 @@ public class Validator {
             System.out.print("Введите количество животных!: ");
         }
         int pets = scanner.nextInt();
-        while (pets <= 0) {
-            System.out.print("Неверное значение! Введите количество животных: ");
-            while (!scanner.hasNextInt()) {
-                String str = scanner.nextLine().trim();
-                System.out.printf("\"%s\" - не число!\n", str);
-                System.out.print("Введите количество животных!: ");
+        while (true) {
+            try {
+                return validatePets(pets);
+            } catch (InvalidInputException exception) {
+                System.out.print(exception.getMessage());
+                while (!scanner.hasNextInt()) {
+                    String str = scanner.nextLine().trim();
+                    System.out.printf("\"%s\" - не число!\n", str);
+                    System.out.print("Введите количество животных!: ");
+                }
+                pets = scanner.nextInt();
             }
-            pets = scanner.nextInt();
         }
-        return pets;
+    }
+
+    private static int validatePets(int pets) throws InvalidInputException {
+        if (pets <= 0) {
+            throw new InvalidInputException("Неверное значение! Введите количество животных: ");
+        } else {
+            return pets;
+        }
     }
 }
 
