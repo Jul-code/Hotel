@@ -103,5 +103,25 @@ public class Validator {
         }
         return stars;
     }
+
+    // Валидация ввода количества животных:
+    public static int validatePetsInput(Scanner scanner) {
+        while (!scanner.hasNextInt()) {
+            String str = scanner.nextLine().trim();
+            System.out.printf("\"%s\" - не число!\n", str);
+            System.out.print("Введите количество животных!: ");
+        }
+        int pets = scanner.nextInt();
+        while (pets <= 0) {
+            System.out.print("Неверное значение! Введите количество животных: ");
+            while (!scanner.hasNextInt()) {
+                String str = scanner.nextLine().trim();
+                System.out.printf("\"%s\" - не число!\n", str);
+                System.out.print("Введите количество животных!: ");
+            }
+            pets = scanner.nextInt();
+        }
+        return pets;
+    }
 }
 
