@@ -31,12 +31,12 @@ public class Validator {
             System.out.print("Введите количество ночей!: ");
         }
         int nights = scanner.nextInt();
-        while (nights <= 0) {
-            System.out.println("Неверное значение! Введите количество ночей: ");
+        while (nights <= 0 || nights>10) {
+            System.out.print("Неверное значение! Введите количество ночей от 1 до 10: ");
             while (!scanner.hasNextInt()) {
                 String str = scanner.next().trim();
                 System.out.printf("\"%s\" - не число!\n", str);
-                System.out.println("Введите количество ночей!: ");
+                System.out.print("Введите количество ночей!: ");
             }
             nights = scanner.nextInt();
         }
