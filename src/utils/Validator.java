@@ -48,15 +48,15 @@ public class Validator {
         while (!scanner.hasNextInt()) {
             String str = scanner.nextLine().trim();
             System.out.printf("\"%s\" - не число!\n", str);
-            System.out.print("Введите количество посетителей!: ");
+            System.out.print("Введите количество взрослых посетителей!: ");
         }
         int visitors = scanner.nextInt();
         while (visitors <= 0) {
-            System.out.print("Неверное значение! Введите количество посетителей: ");
+            System.out.print("Неверное значение! Введите количество взрослых посетителей: ");
             while (!scanner.hasNextInt()) {
                 String str = scanner.nextLine().trim();
                 System.out.printf("\"%s\" - не число!\n", str);
-                System.out.print("Введите количество посетителей!: ");
+                System.out.print("Введите количество взрослых посетителей!: ");
             }
             visitors = scanner.nextInt();
         }

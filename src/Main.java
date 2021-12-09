@@ -12,7 +12,7 @@ public class Main {
         ClientController controller = new ClientController(model, view);
 
         // Запуск программы/приложения
-    controller.runApp();
+        controller.runApp();
     }
 }
 

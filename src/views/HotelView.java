@@ -11,8 +11,9 @@ public class HotelView {
     String title;
     String name;
     String hotelName;
-    int costNights;
-    int costVisitors;
+    int nights;
+    int visitors;
+    int children;
     int stars;
     Scanner scanner;
 
@@ -46,13 +47,18 @@ public class HotelView {
 
         title = "Введите количество ночей: ";
         System.out.print(title);
-        costNights = Validator.validateNightsInput(scanner);
-        model.setNights(costNights);
+        nights = Validator.validateNightsInput(scanner);
+        model.setNights(nights);
 
-        title = "Введите количество посетителей: ";
+        title = "Введите количество взрослых посетителей: ";
         System.out.print(title);
-        costVisitors = Validator.validateVisitorsInput(scanner);
-        model.setVisitors(costVisitors);
+        visitors = Validator.validateVisitorsInput(scanner);
+        model.setVisitors(visitors);
+
+        title = "Введите количество детей: ";
+        System.out.print(title);
+        children = Validator.validateChildrenInput(scanner);
+        model.setChildren(children);
 
         // Закрываем Scanner
         scanner.close();
