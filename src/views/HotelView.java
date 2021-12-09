@@ -14,6 +14,7 @@ public class HotelView {
     int nights;
     int visitors;
     int children;
+    int pets;
     int stars;
     Scanner scanner;
 
@@ -59,6 +60,11 @@ public class HotelView {
         System.out.print(title);
         children = Validator.validateChildrenInput(scanner);
         model.setChildren(children);
+
+        title = "Введите количество животных: ";
+        System.out.print(title);
+        pets = Validator.validatePetsInput(scanner);
+        model.setPets(pets);
 
         // Закрываем Scanner
         scanner.close();

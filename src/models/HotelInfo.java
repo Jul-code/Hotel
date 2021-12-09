@@ -13,9 +13,11 @@ public class HotelInfo implements Nights, Visitors, Stars {
     private int nights;
     private int visitors;
     private int children;
+    private int pets;
     private int stars;
     private double price;
     private static final double CHILDREN_DISCOUNT = 0.5;
+    private static final double PETS_PRICE_MULTIPLIER = 1.2;
 
     public String getHotelName() {
         return hotelName;
@@ -47,6 +49,14 @@ public class HotelInfo implements Nights, Visitors, Stars {
 
     public void setChildren(int children) {
         this.children = children;
+    }
+
+    public int getPets() {
+        return pets;
+    }
+
+    public void setPets(int pets) {
+        this.pets = pets;
     }
 
     public String getName() {
@@ -89,11 +99,16 @@ public class HotelInfo implements Nights, Visitors, Stars {
     }
 
     @Override
+    public double costWithPets(int pets, double cost) {
+        return pets * cost * PETS_PRICE_MULTIPLIER;
+    }
+
+    @Override
     public double applyStars(int stars, double cost) {
         return stars * cost;
     }
 
-    public double totalCost(double costVisitors, double costChildren) {
-        return costVisitors + costChildren;
+    public double totalCost(double costVisitors, double costChildren, double costPets) {
+        return costVisitors + costChildren + costPets;
     }
 }

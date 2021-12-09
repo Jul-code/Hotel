@@ -33,7 +33,9 @@ public class ClientController {
 
         double costChildren = model.costWithChildren(model.getChildren(), costNightsAndStars);
 
-        double totalCost = model.totalCost(costVisitors, costChildren);
+        double costPets = model.costWithPets(model.getPets(), costNightsAndStars);
+
+        double totalCost = model.totalCost(costVisitors, costChildren, costPets);
         String totalCostRounded = Rounder.roundValue(totalCost);
 
         String output = "------------------------------\n" +
