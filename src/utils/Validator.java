@@ -31,7 +31,7 @@ public class Validator {
             System.out.print("Введите количество ночей!: ");
         }
         int nights = scanner.nextInt();
-        while (nights <= 0 || nights>10) {
+        while (nights <= 0 || nights > 10) {
             System.out.print("Неверное значение! Введите количество ночей от 1 до 10: ");
             while (!scanner.hasNextInt()) {
                 String str = scanner.next().trim();
