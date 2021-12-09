@@ -46,12 +46,12 @@ public class HotelView {
 
         title = "Введите количество ночей: ";
         System.out.print(title);
-        costNights = Validator.validateCostNightInput(scanner);
+        costNights = Validator.validateNightsInput(scanner);
         model.setNights(costNights);
 
         title = "Введите количество посетителей: ";
         System.out.print(title);
-        costVisitors = Validator.validateCostVisitorsInput(scanner);
+        costVisitors = Validator.validateVisitorsInput(scanner);
         model.setVisitors(costVisitors);
 
         // Закрываем Scanner

@@ -24,63 +24,63 @@ public class Validator {
     }
 
     // Валидация ввода количества ночей
-    public static int validateCostNightInput(Scanner scanner) {
+    public static int validateNightsInput(Scanner scanner) {
         while (!scanner.hasNextInt()) {
             String str = scanner.nextLine().trim();
             System.out.printf("\"%s\" - не число!\n", str);
             System.out.print("Введите количество ночей!: ");
         }
-        int costNights = scanner.nextInt();
-        while (costNights <= 0) {
+        int nights = scanner.nextInt();
+        while (nights <= 0) {
             System.out.println("Неверное значение! Введите количество ночей: ");
             while (!scanner.hasNextInt()) {
                 String str = scanner.next().trim();
                 System.out.printf("\"%s\" - не число!\n", str);
                 System.out.println("Введите количество ночей!: ");
             }
-            costNights = scanner.nextInt();
+            nights = scanner.nextInt();
         }
-        return costNights;
+        return nights;
     }
 
     // Валидация ввода количества посетителей
-    public static int validateCostVisitorsInput(Scanner scanner) {
+    public static int validateVisitorsInput(Scanner scanner) {
         while (!scanner.hasNextInt()) {
             String str = scanner.nextLine().trim();
             System.out.printf("\"%s\" - не число!\n", str);
             System.out.print("Введите количество посетителей!: ");
         }
-        int costVisitors = scanner.nextInt();
-        while (costVisitors <= 0) {
+        int visitors = scanner.nextInt();
+        while (visitors <= 0) {
             System.out.print("Неверное значение! Введите количество посетителей: ");
             while (!scanner.hasNextInt()) {
                 String str = scanner.nextLine().trim();
                 System.out.printf("\"%s\" - не число!\n", str);
                 System.out.print("Введите количество посетителей!: ");
             }
-            costVisitors = scanner.nextInt();
+            visitors = scanner.nextInt();
         }
-        return costVisitors;
+        return visitors;
     }
 
     // Валидация ввода количества детей
-    public static int validateCostChildInput(Scanner scanner) {
+    public static int validateChildrenInput(Scanner scanner) {
         while (!scanner.hasNextInt()) {
             String str = scanner.nextLine().trim();
             System.out.printf("\"%s\" - не число!\n", str);
             System.out.print("Введите количество детей!: ");
         }
-        int costChild = scanner.nextInt();
-        while (costChild <= 0) {
+        int children = scanner.nextInt();
+        while (children <= 0) {
             System.out.print("Неверное значение! Введите количество детей: ");
             while (!scanner.hasNextInt()) {
                 String str = scanner.nextLine().trim();
                 System.out.printf("\"%s\" - не число!\n", str);
                 System.out.print("Введите количество детей!: ");
             }
-            costChild = scanner.nextInt();
+            children = scanner.nextInt();
         }
-        return costChild;
+        return children;
     }
 
 
