@@ -63,6 +63,27 @@ public class Validator {
         return costVisitors;
     }
 
+    // Валидация ввода количества детей
+    public static int validateCostChildInput(Scanner scanner) {
+        while (!scanner.hasNextInt()) {
+            String str = scanner.nextLine().trim();
+            System.out.printf("\"%s\" - не число!\n", str);
+            System.out.print("Введите количество детей!: ");
+        }
+        int costChild = scanner.nextInt();
+        while (costChild <= 0) {
+            System.out.print("Неверное значение! Введите количество детей: ");
+            while (!scanner.hasNextInt()) {
+                String str = scanner.nextLine().trim();
+                System.out.printf("\"%s\" - не число!\n", str);
+                System.out.print("Введите количество детей!: ");
+            }
+            costChild = scanner.nextInt();
+        }
+        return costChild;
+    }
+
+
     // Валидация ввода количества звезд отеля
     public static int validateStarsInput(Scanner scanner) {
         while (!scanner.hasNextInt()) {

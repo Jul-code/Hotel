@@ -1,4 +1,4 @@
-package model;
+package models;
 
 import base.Nights;
 import base.Stars;
@@ -14,6 +14,8 @@ public class HotelInfo implements Nights, Visitors, Stars {
     private int visitors;
     private int stars;
     private double price;
+
+
 
     public String getHotelName() {
         return hotelName;
@@ -70,5 +72,19 @@ public class HotelInfo implements Nights, Visitors, Stars {
     }
 
     @Override
+    public double costWithChildren(int children, double costNightsAndStars) {
+        return 0; // TODO
+    }
+
+    @Override
     public double applyStars(int stars, double cost) { return stars * cost; }
+
+
+    public int getChildren() {
+        return 0; // TODO
+    }
+
+    public double totalCost(double costVisitors, double costChildren) {
+        return 0; // TODO
+    }
 }

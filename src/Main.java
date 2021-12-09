@@ -1,6 +1,6 @@
 import controller.ClientController;
-import model.HotelInfo;
-import view.HotelView;
+import models.HotelInfo;
+import views.HotelView;
 
 public class Main {
 

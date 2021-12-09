@@ -1,6 +1,6 @@
-package view;
+package views;
 
-import model.HotelInfo;
+import models.HotelInfo;
 import utils.Validator;
 
 import java.util.Scanner;
