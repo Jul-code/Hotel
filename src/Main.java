@@ -1,6 +1,6 @@
 import controller.ClientController;
-import model.HotelInfo;
-import view.HotelView;
+import models.HotelInfo;
+import views.HotelView;
 
 public class Main {
 
@@ -12,7 +12,7 @@ public class Main {
         ClientController controller = new ClientController(model, view);
 
         // Запуск программы/приложения
-    controller.runApp();
+        controller.runApp();
     }
 }
 
